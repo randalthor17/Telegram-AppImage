@@ -6,7 +6,7 @@ cat /tmp/telegram.json| jq '.[0].assets[].browser_download_url' | grep tsetup | 
 wget "$(cat /tmp/telegram.json| jq -r '.[0].assets[].browser_download_url' | grep tsetup | grep tar)"
 VERSION="$(cat /tmp/telegram.json| jq -r '.[0].tag_name')"
 
-
+sudo apt-get install -y libfuse2
 
 APPDIR=AppDir
 mkdir -p $APPDIR
